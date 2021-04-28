@@ -2,7 +2,7 @@ name: Github Actions Example
 
 on:
   pull_request:
-  push:
+    types: ['ready_for_review']
     branches: 
       - master
       - dev
@@ -21,4 +21,7 @@ jobs:
     - name: Install
       run: npm install
     - name: Test
-      run: npm test
+      env:
+        GITHUB_TOKEN: xxxxxxxxxx
+      run: >
+        gh -t "[-> dev] ${{ github.event.pull_request.title }}"
