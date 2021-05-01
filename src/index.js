@@ -1,5 +1,5 @@
 export default class Pencil {
-  constructor(durability = 50, length = 1510, eraserDurability) {
+  constructor(durability = 1150, length = 1510, eraserDurability) {
     this.durability = durability;
     this.maxDurability = durability;
     this.length = length;
